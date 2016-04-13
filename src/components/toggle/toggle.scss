@@ -1,0 +1,18 @@
+.toggle {
+  display: inline-flex;
+  cursor: pointer;
+  user-select: none;
+
+  :focus {
+    background-color: yellow;
+  }
+
+  &__value {
+    padding: 0 5px;
+
+    &--selected {
+      font-weight: bold;
+      color: blue;
+    }
+  }
+}
