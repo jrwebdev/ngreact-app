@@ -4,10 +4,23 @@ import {Simulate} from 'react-addons-test-utils';
 import extend from 'lodash/extend';
 import isNumber from 'lodash/isNumber';
 
+import {Simulate} from 'react-addons-test-utils';
+import extend from 'lodash/extend';
+
+const reactEventMap = {
+    mousedown: 'mouseDown',
+    mouseup: 'mouseUp',
+    keypress: 'keyPress',
+    keydown: 'keyDown',
+    keyup: 'keyUp'
+};
+
 const simulate = (el, event, eventData = {}) => {
 
     if (!el) {
         throw new Error('No element specified');
+    } else if (el[0]) {
+        el = el[0];
     }
 
     if (!event) {
@@ -23,6 +36,7 @@ const simulate = (el, event, eventData = {}) => {
     el.dispatchEvent(e);
 
     // React event
+    event = reactEventMap[event] || event;
     Simulate[event](el, eventData);
 };
 
