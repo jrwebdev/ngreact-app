@@ -13,9 +13,23 @@ export default [() => ({
             this.value = !this.value;
             this.onToggle({value: this.value});
         };
+
+        this.keyHandler = (e) => {
+            console.log('ng', e);
+            if (e.keyCode === 13) {
+                this.toggle();
+            }
+        };
     },
     template: `
-        <div class="toggle" ng-click="ng1Toggle.toggle()" tabindex="0">
+        <div class="toggle" ng-click="ng1Toggle.toggle()" 
+             ng-keypress="ng1Toggle.keyHandler($event)"
+             ng-keydown="ng1Toggle.keyHandler($event)"
+             ng-keyup="ng1Toggle.keyHandler($event)"
+             tabindex="0">
+            
+            
+            
             <div class="toggle__value toggle__value--left"
                  ng-class="{'toggle__value--selected': ng1Toggle.value}">
                 {{ng1Toggle.leftLabel || 'Yes'}}

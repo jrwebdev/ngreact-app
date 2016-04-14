@@ -12,6 +12,10 @@ var config = {
     module: {
         loaders: [{
             test: /\.js$/,
+            loader: 'react-hot',
+            exclude: /node_modules/
+        },{
+            test: /\.js$/,
             loader: 'babel',
             exclude: /node_modules/,
             query: {
@@ -37,7 +41,7 @@ var config = {
         hot: true,
         inline: true,
         progress: true,
-        port: 8080
+        port: 8181
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()

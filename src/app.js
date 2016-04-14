@@ -41,3 +41,14 @@ app.directive('app', () => ({
 }));
 
 angular.element(document).ready(() => angular.bootstrap(document, ['app']));
+
+/*
+import getEventKey from 'react/lib/getEventKey';
+import getEventCharCode from 'react/lib/getEventCharCode';
+ */
+
+const keyHandler = (e) => console.log('native', e);
+
+document.addEventListener('keydown', keyHandler);
+document.addEventListener('keypress', keyHandler);
+document.addEventListener('keyup', keyHandler);

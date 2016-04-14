@@ -1,6 +1,6 @@
 import toggle from '../toggle';
 
-import {simulate} from '../../../utils/event-simulator/event-simulator';
+import {simulate, key} from '../../../utils/event-simulator/event-simulator';
 
 describe ('components/toggle/ngreact', () => {
 
@@ -77,6 +77,13 @@ describe ('components/toggle/ngreact', () => {
         el = compile(`<ng-react-toggle value="value" on-toggle="onToggle(value)"></ng-react-toggle>`);
         let toggle = el[0].querySelector('.toggle');
         simulate(toggle, 'click');
+        expect($scope.onToggle).toHaveBeenCalledWith(false);
+    });
+
+    it ('should call the onToggle callback with the value on pressing enter on the toggle', () => {
+        el = compile(`<ng-react-toggle value="value" on-toggle="onToggle(value)"></ng-react-toggle>`);
+        let toggle = el[0].querySelector('.toggle');
+        key(toggle, 13);
         expect($scope.onToggle).toHaveBeenCalledWith(false);
     });
     
