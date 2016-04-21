@@ -10,7 +10,7 @@
     "postbuild": "cp src/index.html dist/index.html",
     "pretest:e2e": "webdriver-manager update",
     "test:e2e": "protractor test/protractor.dev.conf.js",
-    "pretest:e2e:ci": "npm start && webdriver-manager update",
+    "pretest:e2e:ci": "npm start &",
     "test:e2e:ci": "protractor test/protractor.test.conf.js"
   },
   "repository": {
