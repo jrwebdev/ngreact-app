@@ -76,6 +76,7 @@ describe ('components/toggle/ngreact', () => {
     it ('should call the onToggle callback with the value on clicking the toggle', () => {
         el = compile(`<ng-react-toggle value="value" on-toggle="onToggle(value)"></ng-react-toggle>`);
         let toggle = el[0].querySelector('.toggle');
+        console.log(toggle);
         simulate(toggle, 'click');
         expect($scope.onToggle).toHaveBeenCalledWith(false);
     });

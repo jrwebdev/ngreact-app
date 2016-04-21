@@ -6,5 +6,5 @@ addons:
 env:
   - NODE_ENV=ci
 script:
-  - npm test
+  #- npm test
   - npm run test:e2e:ci

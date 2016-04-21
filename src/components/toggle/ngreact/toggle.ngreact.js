@@ -9,7 +9,9 @@ export default [() => ({
     },
     controller () {
         const onToggle = this.onToggle;
-        this.onToggle = (value) => onToggle({value})
+        this.onToggle = (value) => {
+            onToggle({value})
+        };
     },
     template: `
         <react-toggle value="ngReactToggle.value"
