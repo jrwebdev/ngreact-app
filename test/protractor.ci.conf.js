@@ -6,7 +6,6 @@ exports.config = {
     multiCapabilities: [{
         browserName: 'chrome',
         platform: 'Windows 10',
-        version: '48',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
     },/*{
