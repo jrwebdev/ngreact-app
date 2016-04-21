@@ -29,7 +29,7 @@ app.directive('app', () => ({
         </div>
         <div>
             <h2>ngReact Wrapper Toggle</h2> 
-            <p>ngReact implementation with a wrapper component to maintain Angular bindings and two-way data flow</p>
+            <p>ngReact implementation with an ng1 wrapper component to maintain Angular bindings and two-way data flow</p>
             <ng-react-toggle value="app.toggleValue" 
                              id="ngreact-toggle"
                              on-toggle="app.onToggle(value)">
