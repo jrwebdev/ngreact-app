@@ -22,18 +22,21 @@ app.directive('app', () => ({
         <div>
             <h2>ng1 Toggle</h2>
             <ng1-toggle value="app.toggleValue"
+                        id="ng1-toggle"
                         on-toggle="app.onToggle(value)">
             </ng1-toggle>
         </div>
         <div>
             <h2>ngReact Toggle</h2> 
             <ng-react-toggle value="app.toggleValue" 
+                             id="ngreact-toggle"
                              on-toggle="app.onToggle(value)">
             </ng-react-toggle>
         </div>
         <div>
             <h2>React Toggle</h2>    
             <react-toggle value="app.toggleValue" 
+                          id="react-toggle"
                           on-toggle="app.onToggle">
             </react-toggle>
         </div>    
