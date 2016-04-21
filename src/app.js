@@ -21,20 +21,23 @@ app.directive('app', () => ({
         </div>
         <div>
             <h2>ng1 Toggle</h2>
+            <p>Pure ng1 implementation</p>
             <ng1-toggle value="app.toggleValue"
                         id="ng1-toggle"
                         on-toggle="app.onToggle(value)">
             </ng1-toggle>
         </div>
         <div>
-            <h2>ngReact Toggle</h2> 
+            <h2>ngReact Wrapper Toggle</h2> 
+            <p>ngReact implementation with a wrapper component to maintain Angular bindings and two-way data flow</p>
             <ng-react-toggle value="app.toggleValue" 
                              id="ngreact-toggle"
                              on-toggle="app.onToggle(value)">
             </ng-react-toggle>
         </div>
         <div>
-            <h2>React Toggle</h2>    
+            <h2>ngReact Toggle</h2>
+            <p>React component using ngReact directive service</p>
             <react-toggle value="app.toggleValue" 
                           id="react-toggle"
                           on-toggle="app.onToggle">
