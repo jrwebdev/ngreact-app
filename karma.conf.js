@@ -53,6 +53,9 @@ module.exports = function(config) {
     mochaReporter: {
       output: 'minimal'
     },
+    sauceLabs: {
+      testName: 'Karma Tests'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
