@@ -19,6 +19,12 @@ exports.config = {
         platform: 'Windows 7',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
+    },{
+        browserName: 'iphone',
+        deviceName: 'iPad Air',
+        deviceOrientation: 'portrait',
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+        build: process.env.TRAVIS_BUILD_NUMBER
     }],
 
     specs: [
