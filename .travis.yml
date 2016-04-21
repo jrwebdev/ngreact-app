@@ -3,5 +3,8 @@ node_js:
   - '4'
 addons:
   sauce_connect: true
+env:
+  - NODE_ENV=ci
 script:
+  - npm test
   - npm run test:e2e:ci
