@@ -21,6 +21,7 @@ export default React.createClass({
     }),
 
     toggle () {
+        console.log('REACT TOGGLE');
         this.props.onToggle(!this.props.value);
     },
 

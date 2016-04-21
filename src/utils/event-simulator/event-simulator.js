@@ -1,5 +1,6 @@
 import {Simulate} from 'react-addons-test-utils';
 import extend from 'lodash/extend';
+import isFunction from 'lodash/isFunction';
 
 const reactEventMap = {
     mousedown: 'mouseDown',
@@ -9,14 +10,29 @@ const reactEventMap = {
     keyup: 'keyUp'
 };
 
-const keyEventData = (keyCode, eventData) => extend(eventData, {keyCode, which: keyCode, charCode: keyCode});
+const getDOMNode = (el) => el && !el.nodeName ? el[0] : el;
+const keyEventData = (keyCode, eventData = {}) => extend(eventData, {keyCode, which: keyCode, charCode: keyCode});
+const createEvent = (event, eventData) => {
+    eventData.bubbles = (eventData.bubbles !== false);
+    let e;
+    if (!isFunction(window.Event)) {
+        e = document.createEvent('Event');
+        e.initEvent(event.toLowerCase(), eventData.bubbles, eventData.cancelable);
+    } else {
+        e = new Event(event.toLowerCase(), {
+            bubbles: eventData.bubbles,
+            cancelable: eventData.cancelable
+        });
+    }
+    return e;
+};
 
 const simulate = (el, event, eventData = {}) => {
 
     if (!el) {
         throw new Error('No element specified');
-    } else if (el[0]) {
-        el = el[0];
+    } else {
+        el = getDOMNode(el);
     }
 
     if (!event) {
@@ -24,30 +40,31 @@ const simulate = (el, event, eventData = {}) => {
     }
 
     // Angular event
-    let e = new Event(event.toLowerCase(), {
-        bubbles: eventData.bubbles || false,
-        cancelable: eventData.cancelable || false
-    });
+    let e = createEvent(event, eventData);
     e = extend(e, eventData);
     el.dispatchEvent(e);
 
     // React event
-    event = reactEventMap[event] || event;
-    Simulate[event](el, eventData);
+    let reactEvent = reactEventMap[event] || event;
+    Simulate[reactEvent](el, eventData);
+
 };
 
 simulate.keyDown = (el, keyCode, eventData) => simulate(el, 'keyDown', keyEventData(keyCode, eventData));
 simulate.keyPress = (el, keyCode, eventData) => simulate(el, 'keyPress', keyEventData(keyCode, eventData));
 simulate.keyUp = (el, keyCode, eventData) => simulate(el, 'keyDown', keyEventData(keyCode, eventData));
-
-const key = (el, keyCode) => {
-    let eventData = {keyCode, which: keyCode, charCode: keyCode};
-    simulate(el, 'keyDown', eventData);
-    simulate(el, 'keyPress', eventData);
-    simulate(el, 'keyUp', eventData);
+simulate.key = (el, keyCode, eventData) => {
+    eventData = keyEventData(keyCode, eventData);
+    ['keyDown', 'keyPress', 'keyUp'].map(eventType => simulate(el, eventType, eventData));
+};
+simulate.change = (el, value, eventData = {}) => {
+    el = getDOMNode(el);
+    el.value = value;
+    eventData.target = eventData.target || {};
+    eventData.target.value = value;
+    simulate(el, 'change', eventData);
 };
 
 export {
-    simulate,
-    key
+    simulate
 };
