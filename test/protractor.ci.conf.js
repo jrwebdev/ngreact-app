@@ -8,24 +8,24 @@ exports.config = {
         platform: 'Windows 10',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
-    },{
+    },/*{
         browserName: 'MicrosoftEdge',
         platform: 'Windows 10',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
-    },{
+    },*/{
         browserName: 'internet explorer',
         version: '11',
         platform: 'Windows 7',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
-    },{
+    }/*,{
         browserName: 'iphone',
         deviceName: 'iPad Air',
         deviceOrientation: 'portrait',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
-    }],
+    }*/],
 
     specs: [
         './e2e/**/*.spec.js'
