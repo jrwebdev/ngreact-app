@@ -54,7 +54,9 @@ module.exports = function(config) {
       output: 'minimal'
     },
     sauceLabs: {
-      testName: 'Karma Tests'
+      testName: 'Karma Tests',
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
+      startConnect: false
     },
     port: 9876,
     colors: true,
