@@ -1,9 +1,3 @@
-import getEventKey from 'react/lib/getEventKey';
-import getEventCharCode from 'react/lib/getEventCharCode';
-import {Simulate} from 'react-addons-test-utils';
-import extend from 'lodash/extend';
-import isNumber from 'lodash/isNumber';
-
 import {Simulate} from 'react-addons-test-utils';
 import extend from 'lodash/extend';
 
