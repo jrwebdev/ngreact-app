@@ -13,25 +13,25 @@ var customLaunchers = {},
 if (process.env.NODE_ENV === 'ci') {
   customLaunchers = {
     sl_chrome_win7: {
-      base: 'sauceLabs',
+      base: 'SauceLabs',
       browserName: 'chrome',
       platform: 'Windows 7'
     },
     sl_ie11_win7: {
-      base: 'sauceLabs',
+      base: 'SauceLabs',
       browserName: 'internet explorer',
       version: '11',
       platform: 'Windows 7'
     },
     sl_edge_win10: {
-      base: 'sauceLabs',
+      base: 'SauceLabs',
       browserName: 'MicrosoftEdge',
       platform: 'Windows 10'
     }
   };
   browsers = Object.keys(customLaunchers);
   autoWatch = false;
-  reporters.push('saucelabs');
+  reporters.push('sauceLabs');
 }
 
 module.exports = function(config) {
