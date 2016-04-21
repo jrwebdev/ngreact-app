@@ -24,7 +24,8 @@ export default React.createClass({
     },
 
     keypressHandler (e) {
-        if (e.key === 'Enter') {
+        //if (e.key === 'Enter') { // TODO: Should be using key here, but that isn't passed from the tests.
+        if (e.keyCode === 13) {
             this.toggle();
         }
     },
@@ -34,7 +35,7 @@ export default React.createClass({
         let rightClass = bem('value', {right: 1, selected: !this.props.value});
 
         return (
-            <div className={bem} onClick={this.toggle.bind(this, null)} onKeyPress={this.keypressHandler} tabIndex="0">
+            <div className={bem} onClick={this.toggle} onKeyPress={this.keypressHandler} tabIndex="0">
                 <div className={leftClass}>{this.props.leftLabel}</div>
                 <div className={rightClass}>{this.props.rightLabel}</div>
             </div>

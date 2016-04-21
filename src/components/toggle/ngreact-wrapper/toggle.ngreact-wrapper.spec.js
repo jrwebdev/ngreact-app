@@ -83,7 +83,7 @@ describe ('components/toggle/ngreact-wrapper', () => {
     it ('should call the onToggle callback with the value on pressing enter on the toggle', () => {
         el = compile(`<ngreact-wrapper-toggle value="value" on-toggle="onToggle(value)"></ngreact-wrapper-toggle>`);
         let toggle = el[0].querySelector('.toggle');
-        simulate.key(toggle, 13);
+        simulate.keyPress(toggle, 13);
         expect($scope.onToggle).toHaveBeenCalledWith(false);
     });
     

@@ -46,6 +46,7 @@ const simulate = (el, event, eventData = {}) => {
 
     // React event
     let reactEvent = reactEventMap[event] || event;
+    eventData.type = reactEvent;
     Simulate[reactEvent](el, eventData);
 
 };

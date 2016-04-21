@@ -17,7 +17,7 @@ app.directive('app', () => ({
     },
     template: `
         <div>
-            Value: {{app.toggleValue}}    
+            Value: <strong style="color: blue;">{{app.toggleValue}}</strong>    
         </div>
         <div>
             <h2>ng1 Toggle</h2>
