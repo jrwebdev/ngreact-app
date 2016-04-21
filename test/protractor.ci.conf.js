@@ -9,7 +9,7 @@ exports.config = {
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
     },{
-        browserName: 'edge',
+        browserName: 'MicrosoftEdge',
         platform: 'Windows 10',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         build: process.env.TRAVIS_BUILD_NUMBER
