@@ -1,9 +1,14 @@
 var merge = require('lodash/merge');
 var webpackConfig = require('./webpack.config');
 
-webpackConfig = merge(webpackConfig, {
-    devtool: 'inline-source-map'
-});
+//webpackConfig = merge(webpackConfig, {
+//    devtool: 'inline-source-map'
+//});
+
+webpackConfig = {
+  devtool: 'inline-source-map',
+  module: webpackConfig.module
+};
 
 var customLaunchers = {},
     browsers = ['Chrome'],

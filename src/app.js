@@ -30,31 +30,20 @@ app.directive('app', () => ({
         <div>
             <h2>ngReact Wrapper Toggle</h2> 
             <p>ngReact implementation with an ng1 wrapper component to maintain Angular bindings and two-way data flow</p>
-            <ng-react-toggle value="app.toggleValue" 
-                             id="ngreact-toggle"
-                             on-toggle="app.onToggle(value)">
-            </ng-react-toggle>
+            <ngreact-wrapper-toggle value="app.toggleValue" 
+                                    id="ngreact-wrapper-toggle"
+                                    on-toggle="app.onToggle(value)">
+            </ngreact-wrapper-toggle>
         </div>
         <div>
             <h2>ngReact Toggle</h2>
             <p>React component using ngReact directive service</p>
-            <react-toggle value="app.toggleValue" 
-                          id="react-toggle"
+            <ngreact-toggle value="app.toggleValue" 
+                          id="ngreact-toggle"
                           on-toggle="app.onToggle">
-            </react-toggle>
+            </ngreact-toggle>
         </div>    
     `
 }));
 
 angular.element(document).ready(() => angular.bootstrap(document, ['app']));
-
-/*
-import getEventKey from 'react/lib/getEventKey';
-import getEventCharCode from 'react/lib/getEventCharCode';
- */
-
-const keyHandler = (e) => console.log('native', e);
-
-document.addEventListener('keydown', keyHandler);
-document.addEventListener('keypress', keyHandler);
-document.addEventListener('keyup', keyHandler);

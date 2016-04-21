@@ -1,5 +1,3 @@
-import '../toggle.scss';
-
 export default [() => ({
     controllerAs: 'ng1Toggle',
     bindToController: {

@@ -1,6 +1,6 @@
 // Wrapper to maintain Angular two-way bindings and binding-types
 export default [() => ({
-    controllerAs: 'ngReactToggle',
+    controllerAs: 'ngreactWrapperToggle',
     bindToController: {
         value: '=',
         leftLabel: '@',
@@ -14,10 +14,10 @@ export default [() => ({
         };
     },
     template: `
-        <react-toggle value="ngReactToggle.value"
-                      left-label="ngReactToggle.leftLabel"
-                      right-label="ngReactToggle.rightLabel"
-                      on-toggle="ngReactToggle.onToggle">
-        </react-toggle>
+        <ngreact-toggle value="ngreactWrapperToggle.value"
+                        left-label="ngreactWrapperToggle.leftLabel"
+                        right-label="ngreactWrapperToggle.rightLabel"
+                        on-toggle="ngreactWrapperToggle.onToggle">
+        </ngreact-toggle>
     `
 })];

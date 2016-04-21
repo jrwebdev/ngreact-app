@@ -17,8 +17,8 @@ describe('toggle', function () {
         expect(value.getText()).toContain('true');
     });
 
-    it ('should toggle the value by clicking the ngReact Toggle', function () {
-        var toggle = element(by.id('ngreact-toggle'));
+    it ('should toggle the value by clicking the ngreact wrapper Toggle', function () {
+        var toggle = element(by.id('ngreact-wrapper-toggle'));
         var value = element(by.binding('app.toggleValue'));
         toggle.click();
         expect(value.getText()).toContain('false');
@@ -26,8 +26,8 @@ describe('toggle', function () {
         expect(value.getText()).toContain('true');
     });
 
-    it ('should toggle the value by clicking the React Toggle', function () {
-        var toggle = element(by.id('react-toggle'));
+    it ('should toggle the value by clicking the ngreact Toggle', function () {
+        var toggle = element(by.id('ngreact-toggle'));
         var value = element(by.binding('app.toggleValue'));
         toggle.click();
         expect(value.getText()).toContain('false');
@@ -44,8 +44,8 @@ describe('toggle', function () {
         expect(value.getText()).toContain('true');
     });
 
-    it ('should toggle the value by by enter keypress on the ngReact Toggle', function () {
-        var toggle = element(by.id('ngreact-toggle')).element(by.css('.toggle'));
+    it ('should toggle the value by by enter keypress on the ngreact wrapper Toggle', function () {
+        var toggle = element(by.id('ngreact-wrapper-toggle')).element(by.css('.toggle'));
         var value = element(by.binding('app.toggleValue'));
         toggle.sendKeys(protractor.Key.ENTER);
         expect(value.getText()).toContain('false');
@@ -53,8 +53,8 @@ describe('toggle', function () {
         expect(value.getText()).toContain('true');
     });
 
-    it ('should toggle the value by enter keypress on the React Toggle', function () {
-        var toggle = element(by.id('react-toggle')).element(by.css('.toggle'));
+    it ('should toggle the value by enter keypress on the ngeact Toggle', function () {
+        var toggle = element(by.id('ngreact-toggle')).element(by.css('.toggle'));
         var value = element(by.binding('app.toggleValue'));
         toggle.sendKeys(protractor.Key.ENTER);
         expect(value.getText()).toContain('false');
