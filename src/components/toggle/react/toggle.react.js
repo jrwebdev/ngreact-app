@@ -19,13 +19,11 @@ export default React.createClass({
     }),
 
     toggle () {
-        console.log('REACT TOGGLE');
         this.props.onToggle(!this.props.value);
     },
 
     keypressHandler (e) {
-        //if (e.key === 'Enter') { // TODO: Should be using key here, but that isn't passed from the tests.
-        if (e.keyCode === 13) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
             this.toggle();
         }
     },
