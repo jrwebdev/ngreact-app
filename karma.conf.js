@@ -60,8 +60,8 @@ module.exports = function(config) {
     },
     sauceLabs: {
       testName: 'Karma Tests',
-      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
-      startConnect: false
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+      //startConnect: false
     },
     port: 9876,
     colors: true,
@@ -70,6 +70,7 @@ module.exports = function(config) {
     customLaunchers: customLaunchers,
     browsers: browsers,
     singleRun: false,
-    concurrency: Infinity
+    concurrency: Infinity,
+    captureTimeout: 120000
   })
 };
