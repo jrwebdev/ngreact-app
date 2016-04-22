@@ -37,6 +37,7 @@ if (process.env.NODE_ENV === 'ci') {
   browsers = Object.keys(customLaunchers);
   autoWatch = false;
   reporters = ['progress', 'saucelabs'];
+  //reporters.push('saucelabs');
 }
 
 module.exports = function(config) {

@@ -23,9 +23,10 @@ export default React.createClass({
     },
 
     keypressHandler (e) {
-        if (e.key === 'Enter' || e.keyCode === 13) {
+        console.log(e);
+        //if (e.key === 'Enter' || e.keyCode === 13) {
             this.toggle();
-        }
+        //}
     },
 
     render () {
