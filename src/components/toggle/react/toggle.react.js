@@ -23,7 +23,7 @@ export default React.createClass({
     },
 
     keypressHandler (e) {
-        //console.error(e.type + '-' + e.key + '-' + e.keyCode + '-' + e.which);
+        // Need to check for keyCode and which to support Protractor and IE for use inside an ngReact component
         if (e.key === 'Enter' || e.keyCode === 13 || e.which === 13) {
             this.toggle();
         }
