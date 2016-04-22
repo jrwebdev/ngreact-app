@@ -10,6 +10,7 @@ export default [() => ({
     controller () {
         const onToggle = this.onToggle;
         this.onToggle = (value) => {
+            this.value = value;
             onToggle({value})
         };
     },
