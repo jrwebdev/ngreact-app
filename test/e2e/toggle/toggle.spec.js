@@ -4,11 +4,13 @@ describe('toggle', function () {
         browser.get('/');
     });
 
+    /*
     afterEach(function () {
         browser.manage().logs().get('browser').then(function(browserLog) {
             console.log('log: ' + require('util').inspect(browserLog));
         });
     });
+    */
 
     it ('should display the correct title', function () {
         expect(browser.getTitle()).toBe('ngreact-app');
