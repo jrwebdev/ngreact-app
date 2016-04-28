@@ -11,17 +11,15 @@ const logger = createLogger();
 
 // Set up Angular application
 
-import appContainer from './containers/app';
+import toggleContainer from './containers/toggle/toggle';
 import toggle from './components/toggle/toggle';
 
 const app = angular.module('app', [
+    toggleContainer,
     toggle,
     ngRedux
 ]);
-
-app.config(['$ngReduxProvider', ($ngReduxProvider) => {
-    $ngReduxProvider.createStoreWith(reducer, [logger]);
-}]);
+app.config(['$ngReduxProvider', ($ngReduxProvider) => $ngReduxProvider.createStoreWith(reducer, [logger])]);
 
 app.directive('app', () => ({
     controllerAs: 'app',
@@ -66,11 +64,13 @@ app.directive('app', () => ({
                           id="ngreact-toggle"
                           on-toggle="app.onToggle">
             </ngreact-toggle>
-        </div>    
+        </div>
+        
+        <react-toggle-container></react-toggle-container>
     `
 }));
 
-
+/*
 // Set up React application
 let createStoreWithMiddleware = applyMiddleware(logger)(createStore);
 let store = createStoreWithMiddleware(combineReducers(reducer));
@@ -105,6 +105,7 @@ ReactDOM.render((
         </span>
     </Provider>
 ), reactContainer);
+*/
 
 
 angular.element(document).ready(() => angular.bootstrap(document, ['app']));
