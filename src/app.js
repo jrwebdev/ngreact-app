@@ -37,7 +37,7 @@ app.directive('app', () => ({
         $scope.$on('$destroy', unsubscribe);
     }],
     template: `
-        <h2>Angular App</h2>
+        <h2>Angular Container</h2>
         <div>
             Value: <strong style="color: blue;">{{app.toggleValue}}</strong>    
         </div>

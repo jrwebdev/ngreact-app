@@ -18,7 +18,7 @@ class ReactApp extends React.Component {
         let {dispatch} = this.props.store;
         return (
             <span>
-                <h2>React App</h2>
+                <h2>React Container</h2>
                 <Toggle value={value} onToggle={() => dispatch(toggle(!value))} />
             </span>
         )
