@@ -2,8 +2,6 @@
 
 App for experimenting with Angular, React and ngReact
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/jrwebdev.svg)](https://saucelabs.com/u/jrwebdev)
-
 ## Prerequisites
 
 ```
