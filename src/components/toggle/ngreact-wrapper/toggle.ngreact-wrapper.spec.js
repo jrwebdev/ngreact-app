@@ -1,6 +1,6 @@
 import toggle from '../toggle';
 
-import {simulate, key} from '../../../utils/event-simulator/event-simulator';
+import {simulate} from 'ngreact-test-utils';
 
 describe ('components/toggle/ngreact-wrapper', () => {
 

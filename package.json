@@ -50,7 +50,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-super-dots-reporter": "^0.1.0",
     "karma-webpack": "^1.7.0",
-    "ngreact-test-utils": "github:jrwebdev/ngreact-test-utils",
+    "ngreact-test-utils": "^1.0.3",
     "node-sass": "^3.4.2",
     "postcss": "^5.0.19",
     "postcss-loader": "^0.8.2",
